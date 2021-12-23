@@ -1,0 +1,470 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>franka_ros changelog &mdash; Franka Control Interface (FCI)  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/style_override.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Franka Control Interface (FCI)  documentation" href="index.html"/>
+        <link rel="next" title="franka_ros2" href="franka_ros2.html"/>
+        <link rel="prev" title="franka_ros" href="franka_ros.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Franka Control Interface (FCI)
+          
+
+          
+            
+            <img src="_static/logo.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Minimum system and network requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compatibility.html">Compatible versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_linux.html">Installation on Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation_windows.html">Installation on Windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libfranka.html">libfranka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libfranka_changelog.html">libfranka changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="franka_ros.html">franka_ros</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">franka_ros changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.8.0 - 2021-08-03</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.7.1 - 2020-10-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.7.0 - 2020-07-15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.6.0 - 2018-08-08</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.5.0 - 2018-06-28</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">0.4.1 - 2018-06-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">0.4.0 - 2018-03-26</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">0.3.0 - 2018-02-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">0.2.2 - 2018-01-31</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">0.2.1 - 2018-01-30</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">0.2.0 - 2018-01-29</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">0.1.2 - 2017-10-10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">0.1.1 - 2017-10-09</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">0.1.0 - 2017-09-15</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="franka_ros2.html">franka_ros2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="franka_ros2_changelog.html">franka_ros2 changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control_parameters.html">Robot and interface specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Franka Control Interface (FCI)</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>franka_ros changelog</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/franka_ros_changelog.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="franka-ros-changelog">
+<h1>franka_ros changelog<a class="headerlink" href="#franka-ros-changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>0.8.0 - 2021-08-03<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.8.0</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">franka_hw</span></code>, <code class="docutils literal"><span class="pre">franka_combinable_hw</span></code>, <code class="docutils literal"><span class="pre">franka_combined_hw</span></code>: Added service interface to disconnect
+and reconnect when no controller is active. This allows mixing FCI- and DESK-based application
+without stopping the according hardware nodes.</li>
+<li><strong>BREAKING</strong> <code class="docutils literal"><span class="pre">franka_hw</span></code>, <code class="docutils literal"><span class="pre">franka_combinable_hw</span></code> method control() now is non-const to allow
+locking a mutex member variable.</li>
+<li><strong>BREAKING</strong> Change behavior of <code class="docutils literal"><span class="pre">franka_msgs/SetEEFrame</span></code>. Previously, this method would set
+the flange-to-end-effector transformation <code class="docutils literal"><span class="pre">F_T_EE</span></code>. This has been split up into two transformations:
+<code class="docutils literal"><span class="pre">F_T_NE</span></code>, only settable in Desk, and <code class="docutils literal"><span class="pre">NE_T_EE</span></code>, which can be set in <code class="docutils literal"><span class="pre">franka_ros</span></code> with <code class="docutils literal"><span class="pre">SetEEFrame</span></code>
+and defaults to the identity transformation.</li>
+<li>Add <code class="docutils literal"><span class="pre">F_T_NE</span></code> and <code class="docutils literal"><span class="pre">NE_T_EE</span></code> to <code class="docutils literal"><span class="pre">franka_msgs/FrankaState</span></code>.</li>
+<li><em>Franka Gazebo Integration</em>: Now you can simulate Panda robots in Gazebo including:<ul>
+<li>gravity compensation</li>
+<li>non-realtime commands like <code class="docutils literal"><span class="pre">setEEFrame</span></code> or <code class="docutils literal"><span class="pre">setLoad</span></code></li>
+<li>gripper simulation with the <em>same</em> action interface as <code class="docutils literal"><span class="pre">franka_gripper</span></code></li>
+<li>estimated inertias in the URDF</li>
+<li>no need to change existing ROS controllers</li>
+<li>only torque control supported in this version</li>
+</ul>
+</li>
+<li>Extract Model Library in abstract base class interface. This allows users to implement their own model.</li>
+<li><strong>BREAKING</strong> Remove <code class="docutils literal"><span class="pre">panda_arm_hand.urdf.xacro</span></code>. Use <code class="docutils literal"><span class="pre">panda_arm.urdf.xacro</span> <span class="pre">hand:=true</span></code> instead.</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>0.7.1 - 2020-10-22<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.7.0</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">franka_example_controllers</span></code>: Added example for dual-arm teleoperation based on <code class="docutils literal"><span class="pre">franka_combinable_hw</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">franka_gripper</span></code>: Made stopping on shutdown optional.</li>
+<li><code class="docutils literal"><span class="pre">franka_hw</span></code>: Added <code class="docutils literal"><span class="pre">franka_control_services</span></code> install instruction.</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>0.7.0 - 2020-07-15<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.7.0</p>
+<ul class="simple">
+<li><strong>BREAKING</strong> moved services and action from <code class="docutils literal"><span class="pre">franka_control</span></code> to <code class="docutils literal"><span class="pre">franka_msgs</span></code>.</li>
+<li><strong>BREAKING</strong> moved Service container from <code class="docutils literal"><span class="pre">franka_control</span></code> to <code class="docutils literal"><span class="pre">franka_hw</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">franka_example_controllers</span></code>: Added example for dual-arm control based on <code class="docutils literal"><span class="pre">franka_combinable_hw</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">franka_description</span></code> :<ul>
+<li>Added an example urdf with two panda arms.</li>
+<li><strong>BREAKING</strong> Updated collision volumes.</li>
+<li>Removed invalid <code class="docutils literal"><span class="pre">axis</span></code> for <code class="docutils literal"><span class="pre">joint8</span></code>.</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">franka_hw</span></code>:<ul>
+<li>Added hardware classes to support torque-controlling multiple robots from one controller.</li>
+<li>Refactored FrankaHW class to serve as base class (e.g. for FrankaCombinableHW).</li>
+<li>Added joint limits checking to FrankaHW which means parameterized warning prints when approaching limits.</li>
+<li>Made initial collision behavior a parameter.</li>
+<li>Added default constructor and init method to FrankaHW.</li>
+<li><strong>BREAKING</strong> moved parsing of parameters from control node to FrankaHW::init.</li>
+<li><strong>BREAKING</strong> made libfranka robot a member of FrankaHW.</li>
+<li>Added missing return value to <code class="docutils literal"><span class="pre">franka::ControllerMode</span></code> stream operator function.</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">franka_control</span></code>:<ul>
+<li>Added control node that can runs a <code class="docutils literal"><span class="pre">FrankaCombinedHW</span></code> to control mulitple Pandas.</li>
+<li>Publish whole <code class="docutils literal"><span class="pre">libfranka</span></code> <code class="docutils literal"><span class="pre">franka::RobotState</span></code> in <code class="docutils literal"><span class="pre">franka_state_controller</span></code>.</li>
+</ul>
+</li>
+<li><code class="docutils literal"><span class="pre">franka_example_controllers</span></code>:<ul>
+<li>Cartesian impedance example controller: Interpolate desired orientations with slerp and change orientation error
+to quaternion.</li>
+</ul>
+</li>
+<li><strong>BREAKING</strong> Moved <code class="docutils literal"><span class="pre">panda_moveit_config</span></code> to <cite>``ros-planning`</cite> &lt;<a class="reference external" href="https://github.com/ros-planning/panda_moveit_config">https://github.com/ros-planning/panda_moveit_config</a>&gt;`_.</li>
+<li>Added support for ROS Melodic Morenia.</li>
+<li>Raised minimum CMake version to 3.4 to match <code class="docutils literal"><span class="pre">libfranka</span></code>.</li>
+<li>Add rosparam to choose value of <code class="docutils literal"><span class="pre">franka::RealtimeConfig</span></code>.</li>
+<li>Fix unused parameter bugs in <code class="docutils literal"><span class="pre">FrankaModelHandle</span></code> (#78).</li>
+<li>Added (experimental) support for ROS Noetic Ninjemys.</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h2>0.6.0 - 2018-08-08<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.5.0</p>
+<ul class="simple">
+<li><strong>BREAKING</strong> Fixes for MoveIt, improving robot performance:<ul>
+<li>Fixed joint velocity and acceleration limits in <code class="docutils literal"><span class="pre">joint_limits.yaml</span></code></li>
+<li>Use desired joint state for move group</li>
+</ul>
+</li>
+<li><strong>BREAKING</strong> Updated joint limits in URDF</li>
+<li><strong>BREAKING</strong> Fixed velocity, acceleration and jerk limits in <code class="docutils literal"><span class="pre">franka_hw</span></code></li>
+<li><strong>BREAKING</strong> Start <code class="docutils literal"><span class="pre">franka_gripper_node</span></code> when giving <code class="docutils literal"><span class="pre">load_gripper:=true</span></code> to <code class="docutils literal"><span class="pre">franka_control.launch</span></code></li>
+<li>Allow to configure rate limiting, filtering and internal controller in <code class="docutils literal"><span class="pre">franka_control_node</span></code></li>
+<li><strong>BREAKING</strong> <code class="docutils literal"><span class="pre">FrankaHW::FrankaHW</span></code> takes additional parameters.</li>
+<li><strong>BREAKING</strong> Enabled rate limiting and low-pass filtering by default (<code class="docutils literal"><span class="pre">franka_control_node.yaml</span></code>)</li>
+<li>Publish desired joint state in <code class="docutils literal"><span class="pre">/joint_state_desired</span></code></li>
+<li>Removed <code class="docutils literal"><span class="pre">effort_joint_trajectory_controller</span></code> from <code class="docutils literal"><span class="pre">default_controllers.yaml</span></code></li>
+<li>Fixed a bug when switching between controllers using the same <code class="docutils literal"><span class="pre">libfranka</span></code> interface</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>0.5.0 - 2018-06-28<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.4.0</p>
+<ul class="simple">
+<li><strong>BREAKING</strong> Updated URDF:<ul>
+<li>Adjusted maximum joint velocity</li>
+<li>Updated axis 4 hard and soft limits</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h2>0.4.1 - 2018-06-21<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.3.0</p>
+<ul class="simple">
+<li>Added some missing includes to <code class="docutils literal"><span class="pre">franka_hw</span></code></li>
+<li>Add support for commanding elbow in Cartesian pose and Cartesian velocity interfaces</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h2>0.4.0 - 2018-03-26<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.3.0</p>
+<ul class="simple">
+<li><strong>BREAKING</strong> Removed <code class="docutils literal"><span class="pre">arm_id</span></code> and default <code class="docutils literal"><span class="pre">robot_ip</span></code> from launchfiles</li>
+<li><strong>BREAKING</strong> Changed namespace of <code class="docutils literal"><span class="pre">franka_control</span></code> controller manager</li>
+<li><strong>BREAKING</strong> Changed behavior of <code class="docutils literal"><span class="pre">gripper_action</span></code> for compatibility with MoveIt</li>
+<li>Changes in <code class="docutils literal"><span class="pre">panda_moveit_config</span></code>:<ul>
+<li>Updated joint limits from URDF</li>
+<li>Removed <code class="docutils literal"><span class="pre">home</span></code> poses</li>
+<li>Fixed fake execution</li>
+<li>Add <code class="docutils literal"><span class="pre">load_gripper</span></code> argument (default: <code class="docutils literal"><span class="pre">true</span></code>) to <code class="docutils literal"><span class="pre">panda_moveit.launch</span></code></li>
+<li>Conditionally load controllers/SRDFs based on <code class="docutils literal"><span class="pre">load_gripper</span></code></li>
+<li>Add gripper controller configuration (requires running <code class="docutils literal"><span class="pre">franka_gripper_node</span></code>)</li>
+</ul>
+</li>
+<li>Added <code class="docutils literal"><span class="pre">mimic</span></code> tag for gripper fingers to URDF and fixed velocity limits</li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h2>0.3.0 - 2018-02-22<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.3.0</p>
+<ul class="simple">
+<li><strong>BREAKING</strong> Changed signatures in <code class="docutils literal"><span class="pre">franka_hw::FrankaModelHandle</span></code></li>
+<li><strong>BREAKING</strong> Added epsilon parameters to <code class="docutils literal"><span class="pre">franka_gripper/Grasp</span></code> action</li>
+<li>Added Collada meshes for Panda and Hand</li>
+<li>Added missing dependencies to <code class="docutils literal"><span class="pre">panda_moveit_config</span></code> and <code class="docutils literal"><span class="pre">franka_example_controllers</span></code></li>
+<li>Fixed linker errors when building with <code class="docutils literal"><span class="pre">-DFranka_DIR</span></code> while an older version of
+<code class="docutils literal"><span class="pre">ros-kinetic-libfranka</span></code> is installed</li>
+<li>Added gripper joint state publisher to <code class="docutils literal"><span class="pre">franka_visualization</span></code></li>
+<li>Moved <code class="docutils literal"><span class="pre">move_to_start.py</span></code> example script to <code class="docutils literal"><span class="pre">franka_example_controllers</span></code></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h2>0.2.2 - 2018-01-31<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.2.0</p>
+<ul class="simple">
+<li>Catkin-related fixes for <code class="docutils literal"><span class="pre">franka_example_controllers</span></code></li>
+<li>Added missing <code class="docutils literal"><span class="pre">&lt;build_export_depend&gt;</span></code> for <code class="docutils literal"><span class="pre">message_runtime</span></code></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>0.2.1 - 2018-01-30<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.2.0</p>
+<ul class="simple">
+<li>Added missing dependency to <code class="docutils literal"><span class="pre">franka_example_controllers</span></code></li>
+<li>Lowered rotational gains for Cartesian impedance example controller</li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h2>0.2.0 - 2018-01-29<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>Requires <code class="docutils literal"><span class="pre">libfranka</span></code> &gt;= 0.2.0</p>
+<ul class="simple">
+<li>Added missing run-time dependencies to <code class="docutils literal"><span class="pre">franka_description</span></code> and <code class="docutils literal"><span class="pre">franka_control</span></code></li>
+<li>Added <code class="docutils literal"><span class="pre">tau_J_d</span></code>, <code class="docutils literal"><span class="pre">m_ee</span></code>, <code class="docutils literal"><span class="pre">F_x_Cee</span></code>, <code class="docutils literal"><span class="pre">I_ee</span></code>, <code class="docutils literal"><span class="pre">m_total</span></code>, <code class="docutils literal"><span class="pre">F_x_Ctotal</span></code>, <code class="docutils literal"><span class="pre">I_total</span></code>,
+<code class="docutils literal"><span class="pre">theta</span></code> and <code class="docutils literal"><span class="pre">dtheta</span></code> to <code class="docutils literal"><span class="pre">franka_msgs/FrankaState</span></code></li>
+<li>Added new errors to <code class="docutils literal"><span class="pre">franka_msgs/Errors</span></code></li>
+<li>Updated and improved examples in <code class="docutils literal"><span class="pre">franka_example_controllers</span></code></li>
+<li>Fixed includes for Eigen3 in <code class="docutils literal"><span class="pre">franka_example_controllers</span></code></li>
+<li>Fixed gripper state publishing in <code class="docutils literal"><span class="pre">franka_gripper_node</span></code></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h2>0.1.2 - 2017-10-10<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed out-of-workspace build</li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h2>0.1.1 - 2017-10-09<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Integrated <code class="docutils literal"><span class="pre">franka_description</span></code> as subdirectory</li>
+<li>Fixed dependencies on libfranka</li>
+<li>Fixed RViz config file paths</li>
+<li>Added missing <code class="docutils literal"><span class="pre">test_depend</span></code> to <code class="docutils literal"><span class="pre">franka_hw</span></code></li>
+<li>Added missing CMake install rules</li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h2>0.1.0 - 2017-09-15<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Initial release</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="franka_ros2.html" class="btn btn-neutral float-right" title="franka_ros2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="franka_ros.html" class="btn btn-neutral" title="franka_ros" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Franka Emika GmbH.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
