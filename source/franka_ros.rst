@@ -514,7 +514,7 @@ works. Let's move the gripper to a width of :math:`8\:cm` between the fingers wi
 
 .. code-block:: shell
 
-  rostopic pub --once /panda/franka_gripper/move/goal franka_gripper/MoveActionGoal "goal: { width: 0.08, speed: 0.1 }"
+  rostopic pub --once /franka_gripper/move/goal franka_gripper/MoveActionGoal "goal: { width: 0.08, speed: 0.1 }"
 
 
 Since we launched our robot with the Cartesian Impedance controller from
@@ -534,7 +534,7 @@ Let's grasp it with :math:`5\:N`:
 
 .. code-block:: shell
 
-   rostopic pub --once /panda/franka_gripper/grasp/goal \
+   rostopic pub --once /franka_gripper/grasp/goal \
                 franka_gripper/GraspActionGoal \
                 "goal: { width: 0.03, epsilon:{ inner: 0.005, outer: 0.005 }, speed: 0.1, force: 5.0}"
 .. note::
@@ -554,7 +554,7 @@ After you placed it gently on the red pad, stop the grasp with the ``stop`` acti
 
 .. code-block:: shell
 
-   rostopic pub --once /panda/franka_gripper/stop/goal franka_gripper/StopActionGoal {}
+   rostopic pub --once /franka_gripper/stop/goal franka_gripper/StopActionGoal {}
 
 Note that the contact forces disappear now, since no force is applied anymore. Alternatively you can also use
 the ``move`` action.
